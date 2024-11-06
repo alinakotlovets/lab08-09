@@ -14,35 +14,44 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-        useMaterial3: false,
-        textTheme: const TextTheme(
-          bodyMedium: TextStyle(fontSize: 16, color: Colors.black),
-          titleLarge: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-        ),
-        inputDecorationTheme: InputDecorationTheme(
-          border: const OutlineInputBorder(
+        useMaterial3: true,
+        inputDecorationTheme: const InputDecorationTheme(
+          border: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.black, width: 1.0),
           ),
           filled: true,
-          fillColor: Colors.grey[200],
+          fillColor: Color.fromRGBO(211, 211, 211, 0.5),
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            minimumSize: const Size.fromHeight(48),
+            backgroundColor: const Color.fromRGBO(45, 84, 130, 1),
+            foregroundColor: Colors.white,
+            minimumSize:  const Size.fromHeight(48),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5.0),
+            ),
           ),
         ),
         outlinedButtonTheme: OutlinedButtonThemeData(
           style: OutlinedButton.styleFrom(
-            minimumSize: const Size.fromHeight(48),
+            minimumSize:const Size(double.infinity, 48),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5.0),
+            ),
           ),
         ),
-        textButtonTheme: TextButtonThemeData(
-          style: TextButton.styleFrom(
-            minimumSize: const Size.fromHeight(48),
+        dialogTheme: const DialogTheme(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.zero,
           ),
+        ),
+        textTheme: const TextTheme(
+          titleLarge: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),
+          bodyMedium: TextStyle(fontSize: 16, color: Colors.black),
         ),
       ),
-      home: const SignInScreen(),
+      home: SignInScreen(),
     );
   }
 }
+
